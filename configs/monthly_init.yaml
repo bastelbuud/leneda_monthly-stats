@@ -1,0 +1,42 @@
+consumers:
+  names: ["Caroline", "Christian", "Marc"]
+  smartmeters:
+    [
+      "LU00000106370000000000000xxxxxxxx",
+      "LU00000106370000000000000yyyyyyyy",
+      "LU00000106370000000000000zzzzzzzz",
+    ]
+producers:
+  names: ["Marc", "Gaby", "Pit"]
+  smartmeters:
+    [
+      "LU00000106370000000000007xxxxxxxx",
+      "LU00000106370000000000007yyyyyyyy",
+      "LU00000106370000000000007zzzzzzzz",
+    ]
+obiscode:
+  [
+    ["1-1:1.29.0", "C", "Measured consumption"],
+    ["1-65:1.29.1", "C", "Consumption layer 1 sharing Group (AIR)"],
+    ["1-65:1.29.3", "C", "Consumption layer 2 sharing Group (ACR/ACF/AC1)"],
+    ["1-65:1.29.2", "C", "Consumption  layer 2 sharing Group (CEL)"],
+    ["1-65:1.29.4", "C", "Consumption  layer 4 sharing Group (APS/CER/CEN)"],
+    ["1-65:1.29.9", "C", "Remaining consumption invoiced by supplier"],
+    ["1-1:2.29.0", "P", "Measured active production"],
+
+    ["1-65:2.29.1", "P", "Production layer 1 sharing Group (AIR)"],
+    ["1-65:2.29.3", "P", "Production layer 2 sharing Group (ACR/ACF/AC1)"],
+    ["1-65:2.29.2", "P", "Production layer 3 sharing Group (CEL)"],
+    ["1-65:2.29.4", "P", "Production layer 4 sharing Group (APS/CER/CEN)"],
+    ["1-65:2.29.9", "P", "Remaining production sold to market"],
+  ]
+leneda:
+  url: "https://api.leneda.lu"
+  energyId:
+    header: "X-ENERGY-ID"
+    value: "<your leneda energy id"
+  apiKey:
+    header: "X-API-KEY"
+    value: "<your leneda api key> "
+  api:
+    meteringData: "/api/metering-points/" #{meteringPointCode}/time-series"
